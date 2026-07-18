@@ -16,7 +16,7 @@ body {
     padding: 40px 0;
 }
 
-/* Die Profil-Box */
+
 .profile-card {
     width: 550px;
     background-color: #111214;
@@ -58,11 +58,11 @@ body {
     right: 4px;
 }
 
-/* Der Kasten oben rechts für deine vier vergrößerten Abzeichen */
+
 .badges-container {
     position: absolute;
     top: 130px; 
-    right: 14px; /* Von 22px auf 14px geändert, damit alle 4 perfekt reinpassen */
+    right: 14px; 
     display: flex;
     gap: 8px; 
     background-color: #111214;
@@ -80,7 +80,7 @@ body {
     cursor: pointer;
 }
 
-/* Icons vergrößert auf 32px */
+
 .custom-badge {
     width: 32px;
     height: 32px;
@@ -92,7 +92,7 @@ body {
     transform: scale(1.15);
 }
 
-/* Text-Kasten (Tooltip) - Schrift vergrößert auf 0.9rem */
+
 .tooltip-text {
     visibility: hidden;
     width: max-content;
