@@ -58,17 +58,19 @@ body {
     right: 4px;
 }
 
-/* Der Kasten oben rechts für deine drei vergrößerten Abzeichen */
+/* Der Kasten oben rechts für deine vier vergrößerten Abzeichen */
 .badges-container {
     position: absolute;
     top: 130px; 
-    right: 22px;
+    right: 14px; /* Von 22px auf 14px geändert, damit alle 4 perfekt reinpassen */
     display: flex;
     gap: 8px; 
     background-color: #111214;
     padding: 6px 8px;
     border-radius: 6px;
     z-index: 10;
+}
+
 }
 
 .badge-wrapper {
