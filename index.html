@@ -3,13 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Eren's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <h1>Eren's Portfolio</h1>
-<p>Welcome on my first own website! I'm learning to code.</p>
+
+    <!-- Das Haupt-Profilfenster (Zentriert auf deinem Hintergrund) -->
+    <div class="profile-card">
+        
+        <!-- Das weiße Banner oben -->
+        <div class="profile-banner"></div>
+
+        <!-- Der Bereich für das Profilbild -->
+        <div class="avatar-container">
+            <div class="avatar">
+                <img src="avatar.jpeg" alt="Eren's Avatar" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+            <!-- Fester grüner Online-Punkt -->
+            <div class="status-dot"></div>
+        </div>
+
+        <!-- DEINE BADGES IN NEUER REIHENFOLGE -->
+        <div class="badges-container">
+            
+            <!-- Badge 1: Moderator -->
+            <div class="badge-wrapper">
+                <img src="Moderator.png" alt="Moderator" class="custom-badge">
+                <span class="tooltip-text">Moderator</span>
+            </div>
+
+            <!-- Badge 2: Administrator -->
+            <div class="badge-wrapper">
+                <img src="Administrator.png" alt="Administrator" class="custom-badge">
+                <span class="tooltip-text">Administrator</span>
+            </div>
+
+            <!-- Badge 3: Developer -->
+            <div class="badge-wrapper">
+                <img src="Developer.png" alt="Developer" class="custom-badge">
+                <span class="tooltip-text">Developer</span>
+            </div>
+
+        </div>
+
+        <!-- Dein Name und Benutzername -->
+        <div class="profile-name-section">
+            <h1 class="display-name">Eren1111233</h1>
+            <p class="username">Eren1111233</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Deine Bio -->
+        <div class="about-me-section">
+            <h2>ABOUT ME</h2>
+            <p>👋 Hello, I'm Eren! I'm an aspiring developer and an aviation enthusiast. I love coding and flying!</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Staff Member Of Sektion -->
+        <div class="staff-section">
+            <h2>STAFF MEMBER OF</h2>
+            <div class="servers-grid">
+                
+                <!-- Server 1: SkyOps Network -->
+                <a href="https://discord.gg/fqDNjV5szj" target="_blank" class="server-card">
+                    <div class="server-icon-container">
+                        <div class="server-icon">
+                            <img src="skyops.png" alt="SkyOps Logo" style="width: 100%; height: 100%; border-radius: 16px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="server-info">
+                        <h3>SkyOps Network</h3>
+                        <p class="server-desc">Connecting aviation enthusiasts through community, passion, and shared experiences.</p>
+                        </div>
+                        <span class="role-badge manager-role">COMMUNITY MANAGER</span>
+                </a>
+
+                <!-- Server 2: Vector Control Academy -->
+                <a href="https://discord.gg/3tmPJKPENR" target="_blank" class="server-card">
+                    <div class="server-icon-container">
+                        <div class="server-icon">
+                            <img src="vca.png" alt="VCA Logo" style="width: 100%; height: 100%; border-radius: 16px; object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="server-info">
+                        <h3>Vector Control Academy</h3>
+                        <p class="server-desc">ATC Training Server</p>
+                        </div>
+                        <span class="role-badge board-role">BOARD</span>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>

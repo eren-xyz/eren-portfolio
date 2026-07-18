@@ -1,22 +1,243 @@
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    color: #f2f3f5;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 40px 0;
+}
+
+/* Die Profil-Box */
+.profile-card {
+    width: 550px;
+    background-color: #111214;
+    border-radius: 16px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 24px;
+}
+
+.profile-banner {
+    height: 120px;
+    background-color: #ffffff; 
+}
+
+.avatar-container {
+    position: absolute;
+    top: 75px;
+    left: 22px;
+}
+
+.avatar {
+    width: 92px;
+    height: 92px;
+    background-color: #2b2d31;
+    border: 6px solid #111214;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.status-dot {
+    width: 16px;
+    height: 16px;
+    background-color: #23a55a;
+    border: 4px solid #111214;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+/* Der Kasten oben rechts für deine drei vergrößerten Abzeichen */
+.badges-container {
+    position: absolute;
+    top: 130px; 
+    right: 22px;
+    display: flex;
+    gap: 8px; 
+    background-color: #111214;
+    padding: 6px 8px;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.badge-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Icons vergrößert auf 32px */
+.custom-badge {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.badge-wrapper:hover .custom-badge {
+    transform: scale(1.15);
+}
+
+/* Text-Kasten (Tooltip) - Schrift vergrößert auf 0.9rem */
+.tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #111214;
+    color: #f2f3f5;
+    text-align: center;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.9rem; 
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    border: 1px solid #232428;
+    
+    position: absolute;
+    z-index: 99;
+    top: 135%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.badge-wrapper:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.profile-name-section {
+    margin-top: 60px;
+    padding: 0 22px;
+}
+
+.display-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+
+.username {
+    color: #b5bac1;
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #2b2d31;
+    margin: 16px 22px;
+}
+
+.about-me-section {
+    padding: 0 22px;
+}
+
+.about-me-section h2, .staff-section h2 {
+    font-size: 0.75rem;
+    color: #f2f3f5;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.about-me-section p {
+    color: #dbdee1;
+    font-size: 0.95rem;
+    line-height: 1.4;
     margin: 0;
 }
 
-h1 {
-    color: #007acc;
-    font-size: 3rem;
-    margin-bottom: 10px;
+.staff-section {
+    padding: 0 22px;
 }
 
-p {
-    color: #cccccc;
-    font-size: 1.2rem;
+.servers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.server-card {
+    background-color: #2b2d31;
+    border: 1px solid #232428;
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    text-decoration: none;
+    color: #f2f3f5;
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.server-card:hover {
+    background-color: #35373c;
+    transform: translateY(-2px);
+}
+
+.server-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.server-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.server-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.server-desc {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #b5bac1;
+    line-height: 1.3;
+}
+
+.role-badge {
+    align-self: flex-start;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.role-badge.board-role {
+    background-color: rgba(0, 65, 145, 0.2);
+    color: #4b9bff;
+    border: 1px solid rgba(75, 155, 255, 0.3);
+}
+
+.role-badge.manager-role {
+    background-color: rgba(212, 132, 61, 0.2);
+    color: #ffde90;
+    border: 1px solid rgba(255, 222, 144, 0.3);
 }
