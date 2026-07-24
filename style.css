@@ -237,10 +237,10 @@ body {
     border: 1px solid rgba(75, 155, 255, 0.3);
 }
 
-.role-badge.manager-role {
-    background-color: rgba(212, 132, 61, 0.2);
-    color: #ffde90;
-    border: 1px solid rgba(255, 222, 144, 0.3);
+.role-badge.owner-role {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .socials-section {
