@@ -1,5 +1,18 @@
 body {
 
+
+body{
+   height:620px;
+   width:1023px;
+   position:absolute;
+   box-sizing:border-box;
+   transform-origin: 0 0;
+   -moz-transform-origin:0 0;
+   -o-transform-origin: 0 0;
+   -webkit-transform-origin: 0 0;
+}
+
+
     background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
@@ -26,14 +39,12 @@ body {
     overflow: hidden;
     padding-bottom: 24px;
 
-    /* Glassy Apple-style outline: soft translucent border + faint inner sheen */
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
         0 12px 32px rgba(0, 0, 0, 0.7),
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
         inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 
-    /* Smooth entrance animation */
     opacity: 0;
     transform: translateY(24px) scale(0.96);
     animation: card-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -62,7 +73,6 @@ animation-play-state: paused;
     }
 }
 
-/* Staggered fade-in for inner sections, layered on top of the card animation */
 .profile-banner,
 .avatar-container,
 .badges-container,
@@ -94,7 +104,6 @@ animation-play-state: paused;
     }
 }
 
-/* Start website animations after clicking "Enter" */
 body.entered .profile-card,
 body.entered .profile-banner,
 body.entered .avatar-container,
@@ -195,7 +204,6 @@ body.entered .socials-section {
     gap: 8px;
 }
 
-/* Location badge — pin icon that reveals "Langen Radar" on hover */
 .location-badge {
     position: absolute;
     top: 135px;
@@ -220,13 +228,11 @@ body.entered .socials-section {
     height: 32px;
     transition: filter 0.2s ease, transform 0.2s ease;
     filter: brightness(0) saturate(100%) invert(78%) sepia(6%) saturate(255%) hue-rotate(179deg) brightness(92%) contrast(87%);
-    /* ^ tints a black source icon to #b5bac1 */
 }
 
 .location-badge:hover .location-icon {
     transform: scale(1.15);
     filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2476%) hue-rotate(329deg) brightness(101%) contrast(101%);
-    /* ^ tints to #ff5c5c on hover */
 }
 
 .location-badge .tooltip-text {
