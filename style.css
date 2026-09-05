@@ -373,19 +373,31 @@ body.entered .socials-section {
 
 .role-badge.board-role {
     background-color: rgba(0, 65, 145, 0.2);
-    color: #4b9bff;
+    color: #ffffff;
     border: 1px solid rgba(75, 155, 255, 0.3);
+}
+
+.role-badge.mkt-role {
+    background-color: rgba(255, 255, 0, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+.role-badge.baw-role {
+    background-color: rgba(255, 42, 59, 0.2);
+    color: #ffffff;
+    border: 1px solid rgba(255, 42, 59, 0.3);
 }
 
 .role-badge.owner-role {
     background-color: rgba(255, 0, 0, 0.2);
-    color: #ff0000;
+    color: #ffffff;
     border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .role-badge.dev-role {
     background-color: rgba(0, 255, 255, 0.2);
-    color: #00FFFF;
+    color: #ffffff;
     border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
