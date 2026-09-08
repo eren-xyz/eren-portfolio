@@ -2,11 +2,9 @@ const enterScreen = document.getElementById("enter-screen");
 
 enterScreen.addEventListener("click", () => {
     enterScreen.classList.add("entered");
-
     document.body.classList.add("entered");
-setTimeout(() => { enterScreen.style.display = 'none'; }, 600);
+    setTimeout(() => { enterScreen.style.display = 'none'; }, 600);
 });
-
 
 var ratio;
 var left;
@@ -26,17 +24,19 @@ function resize()
     $('body').css('-o-transform', 'scale(' + ratio + ')');
     $('body').css('-webkit-transform', 'scale(' + ratio + ')');
     $('body').css('transform', 'scale(' + ratio + ')');
+    $('body').css('transform-origin', 'top center');
+    $('body').css('-webkit-transform-origin', 'top center');
     left = ($(window).innerWidth() - $('body').outerWidth() * ratio) / 2;
     $('body').css('left', left);
-     $('body').css('transform-origin', 'top center');
-    $('body').css('-webkit-transform-origin', 'top center');
 }
 
 const badges = document.querySelectorAll('.badge-wrapper, .location-badge');
 
 badges.forEach(badge => {
-    badge.addEventListener('click', function(e) {
+    badge.addEventListener('touchend', function(e) {
+        e.preventDefault();
         e.stopPropagation();
+        
         const tooltip = this.querySelector('.tooltip-text');
         const img = this.querySelector('img');
         const isOpen = tooltip.style.visibility === 'visible';
@@ -57,7 +57,7 @@ badges.forEach(badge => {
     });
 });
 
-document.addEventListener('click', function() {
+document.addEventListener('touchend', function() {
     document.querySelectorAll('.tooltip-text').forEach(t => {
         t.style.visibility = 'hidden';
         t.style.opacity = '0';
