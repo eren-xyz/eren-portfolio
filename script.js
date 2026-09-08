@@ -28,6 +28,8 @@ function resize()
     $('body').css('transform', 'scale(' + ratio + ')');
     left = ($(window).innerWidth() - $('body').outerWidth() * ratio) / 2;
     $('body').css('left', left);
+     $('body').css('transform-origin', 'top center');
+    $('body').css('-webkit-transform-origin', 'top center');
 }
 
 const badges = document.querySelectorAll('.badge-wrapper, .location-badge');
