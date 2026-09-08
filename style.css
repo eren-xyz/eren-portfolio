@@ -501,26 +501,14 @@ body {
 }
 
 
-.custom-badge, .location-icon, img {
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    user-select: none !important;
-}
-
 @media (hover: none) {
-
     .badge-wrapper:hover .custom-badge { transform: none; }
     .badge-wrapper:hover .tooltip-text { visibility: hidden; opacity: 0; }
-
     .location-badge:hover .location-icon { transform: none; filter: brightness(0) saturate(100%) invert(78%) sepia(6%) saturate(255%) hue-rotate(179deg) brightness(92%) contrast(87%); }
     .location-badge:hover .tooltip-text { visibility: hidden; opacity: 0; }
-
-    .badge-wrapper:active .custom-badge { transform: scale(1.15); }
-    .badge-wrapper:active .tooltip-text { visibility: visible; opacity: 1; }
-
-    .location-badge:active .location-icon { 
-        transform: scale(1.15); 
-        filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2476%) hue-rotate(329deg) brightness(101%) contrast(101%); 
-    }
-    .location-badge:active .tooltip-text { visibility: visible; opacity: 1; }
+    .badge-wrapper:focus .custom-badge { transform: scale(1.15); }
+    .badge-wrapper:focus .tooltip-text { visibility: visible; opacity: 1; }
+    .location-badge:focus .location-icon { transform: scale(1.15); filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2476%) hue-rotate(329deg) brightness(101%) contrast(101%); }
+    .location-badge:focus .tooltip-text { visibility: visible; opacity: 1; }
 }
+.badge-wrapper:focus, .location-badge:focus { outline: none; }
