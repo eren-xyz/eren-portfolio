@@ -3,8 +3,8 @@ const enterScreen = document.getElementById("enter-screen");
 enterScreen.addEventListener("click", () => {
     enterScreen.classList.add("entered");
 
-    // Start the website animations
     document.body.classList.add("entered");
+setTimeout(() => { enterScreen.style.display = 'none'; }, 600);
 });
 
 
@@ -37,7 +37,6 @@ badges.forEach(badge => {
         e.stopPropagation();
         const tooltip = this.querySelector('.tooltip-text');
         const img = this.querySelector('img');
-        
         const isOpen = tooltip.style.visibility === 'visible';
         
         document.querySelectorAll('.tooltip-text').forEach(t => {
@@ -65,4 +64,3 @@ document.addEventListener('click', function() {
         i.style.transform = 'none';
     });
 });
-
