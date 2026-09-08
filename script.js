@@ -31,9 +31,10 @@ function resize()
 }
 
 const badges = document.querySelectorAll('.badge-wrapper, .location-badge');
+const profileCard = document.querySelector('.profile-card');
 
 badges.forEach(badge => {
-    badge.addEventListener('touchend', function(e) {
+    badge.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         
@@ -41,23 +42,31 @@ badges.forEach(badge => {
         const img = this.querySelector('img');
         const isOpen = tooltip.style.visibility === 'visible';
         
-        document.querySelectorAll('.tooltip-text').forEach(t => {
-            t.style.visibility = 'hidden';
-            t.style.opacity = '0';
-        });
-        document.querySelectorAll('.badge-wrapper img, .location-icon').forEach(i => {
-            i.style.transform = 'none';
-        });
+        closeAllTooltips();
 
         if (!isOpen) {
             tooltip.style.visibility = 'visible';
             tooltip.style.opacity = '1';
-            img.style.transform = 'scale(1.15)';
+            if (img) img.style.transform = 'scale(1.15)';
         }
     });
 });
 
-document.addEventListener('touchend', function() {
+if (profileCard) {
+    profileCard.addEventListener('click', function(e) {
+        if (!e.target.closest('.badge-wrapper') && !e.target.closest('.location-badge')) {
+            closeAllTooltips();
+        }
+    });
+}
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.profile-card')) {
+        closeAllTooltips();
+    }
+});
+
+function closeAllTooltips() {
     document.querySelectorAll('.tooltip-text').forEach(t => {
         t.style.visibility = 'hidden';
         t.style.opacity = '0';
@@ -65,4 +74,4 @@ document.addEventListener('touchend', function() {
     document.querySelectorAll('.badge-wrapper img, .location-icon').forEach(i => {
         i.style.transform = 'none';
     });
-});
+}
