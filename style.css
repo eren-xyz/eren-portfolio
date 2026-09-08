@@ -502,13 +502,13 @@ body {
 
 
 @media (hover: none) {
-    .badge-wrapper:hover .custom-badge { transform: none; }
-    .badge-wrapper:hover .tooltip-text { visibility: hidden; opacity: 0; }
-    .location-badge:hover .location-icon { transform: none; filter: brightness(0) saturate(100%) invert(78%) sepia(6%) saturate(255%) hue-rotate(179deg) brightness(92%) contrast(87%); }
-    .location-badge:hover .tooltip-text { visibility: hidden; opacity: 0; }
-    .badge-wrapper:focus .custom-badge { transform: scale(1.15); }
-    .badge-wrapper:focus .tooltip-text { visibility: visible; opacity: 1; }
-    .location-badge:focus .location-icon { transform: scale(1.15); filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2476%) hue-rotate(329deg) brightness(101%) contrast(101%); }
-    .location-badge:focus .tooltip-text { visibility: visible; opacity: 1; }
+    .badge-wrapper:hover .custom-badge, .location-badge:hover .location-icon { transform: none !important; }
+    .badge-wrapper:hover .tooltip-text, .location-badge:hover .tooltip-text { visibility: hidden !important; opacity: 0 !important; }
+    
+    .badge-wrapper:focus-within .custom-badge { transform: scale(1.15) !important; }
+    .badge-wrapper:focus-within .tooltip-text { visibility: visible !important; opacity: 1 !important; }
+    
+    .location-badge:focus-within .location-icon { transform: scale(1.15) !important; filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(2476%) hue-rotate(329deg) brightness(101%) contrast(101%) !important; }
+    .location-badge:focus-within .tooltip-text { visibility: visible !important; opacity: 1 !important; }
 }
-.badge-wrapper:focus, .location-badge:focus { outline: none; }
+.badge-wrapper, .location-badge { outline: none !important; -webkit-tap-highlight-color: transparent; }
