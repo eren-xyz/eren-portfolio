@@ -499,3 +499,20 @@ body {
         opacity: 0.7;
     }
 }
+
+@media (hover: none) {
+    .badge-wrapper:hover .custom-badge {
+        transform: none;
+    }
+    .badge-wrapper:hover .tooltip-text {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .badge-wrapper:active .custom-badge {
+        transform: scale(1.15);
+    }
+    .badge-wrapper:active .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+}
