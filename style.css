@@ -1,16 +1,7 @@
 body {
 
 
-body{
-   height:620px;
-   width:1023px;
-   position:absolute;
-   box-sizing:border-box;
-   transform-origin: 0 0;
-   -moz-transform-origin:0 0;
-   -o-transform-origin: 0 0;
-   -webkit-transform-origin: 0 0;
-}
+
 
 
     background-image: url('background.jpg');
@@ -510,3 +501,27 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    .container, .wrapper, main, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    }
+    .row, .flex-container, .grid-container {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .column, .sidebar, .card, .projekt-box {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    img, video {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    h1 { font-size: 2rem !important; }
+    h2 { font-size: 1.5rem !important; }
+}
