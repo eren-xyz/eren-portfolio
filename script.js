@@ -30,8 +30,39 @@ function resize()
     $('body').css('left', left);
 }
 
-document.addEventListener('click', function(e) {
-    if (!e.target.closest('.badge-wrapper') && !e.target.closest('.location-badge')) {
-        document.activeElement.blur();
-    }
+const badges = document.querySelectorAll('.badge-wrapper, .location-badge');
+
+badges.forEach(badge => {
+    badge.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tooltip = this.querySelector('.tooltip-text');
+        const img = this.querySelector('img');
+        
+        const isOpen = tooltip.style.visibility === 'visible';
+        
+        document.querySelectorAll('.tooltip-text').forEach(t => {
+            t.style.visibility = 'hidden';
+            t.style.opacity = '0';
+        });
+        document.querySelectorAll('.badge-wrapper img, .location-icon').forEach(i => {
+            i.style.transform = 'none';
+        });
+
+        if (!isOpen) {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+            img.style.transform = 'scale(1.15)';
+        }
+    });
 });
+
+document.addEventListener('click', function() {
+    document.querySelectorAll('.tooltip-text').forEach(t => {
+        t.style.visibility = 'hidden';
+        t.style.opacity = '0';
+    });
+    document.querySelectorAll('.badge-wrapper img, .location-icon').forEach(i => {
+        i.style.transform = 'none';
+    });
+});
+
