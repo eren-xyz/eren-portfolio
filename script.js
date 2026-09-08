@@ -29,3 +29,9 @@ function resize()
     left = ($(window).innerWidth() - $('body').outerWidth() * ratio) / 2;
     $('body').css('left', left);
 }
+
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.badge-wrapper') && !e.target.closest('.location-badge')) {
+        document.activeElement.blur();
+    }
+});
